@@ -1,6 +1,6 @@
-# vue_project
+# vue-cnode
 
-> A Vue.js project
+> CNode built with vue and vuex
 
 ## Build Setup
 
