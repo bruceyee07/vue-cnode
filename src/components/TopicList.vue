@@ -1,6 +1,6 @@
 <template>
 	<div class="topic-list-container">
-		<div v-for="item in getTopicList.topicList">
+		<div class="cell" v-for="item in getTopicList.topicList">
 			<h4>{{ item.title }}</h4>
 		</div>
 	</div>
@@ -26,5 +26,15 @@
 </script>
 
 <style scoped>
-	
+	.cell {
+		padding-right: 10px;
+    	background: #fff;
+    	border-top: 1px solid #f0f0f0;
+    	position: relative;
+    	padding: 10px 0 10px 10px;
+    	font-size: 14px;
+	}
+	.cell:nth-child(1) {
+		border-top: none;
+	}
 </style>
