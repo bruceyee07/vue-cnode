@@ -8,7 +8,7 @@
 	import { mapGetters } from 'vuex'
 
 	export default {
-		name: 'topic-list',
+		name: 'navbar',
 		data() {
 			return {
 				tabs: [

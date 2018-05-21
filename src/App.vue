@@ -1,5 +1,8 @@
 <template>
 	<div id="app">
+		<div class="top-content">
+			<c-header></c-header>
+		</div>
 		<div class="main-content">
 			<router-view/>
 		</div>
@@ -7,8 +10,13 @@
 </template>
 
 <script>
+import Header from '@/components/Header'
+
 export default {
-	name: 'App'
+	name: 'App',
+	components: {
+		'c-header': Header
+	}
 }
 </script>
 
@@ -26,7 +34,6 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	color: #2c3e50;
-	margin-top: 60px;
 }
 .clearfix:after {
 	display: block;
