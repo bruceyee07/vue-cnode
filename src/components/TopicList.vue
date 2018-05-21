@@ -1,6 +1,6 @@
 <template>
 	<div class="topic-list-container">
-		<div v-for="item in topicList">
+		<div v-for="item in getTopicList.topicList">
 			<h4>{{ item.title }}</h4>
 		</div>
 	</div>
@@ -13,8 +13,8 @@
 		name: 'topic-list',
 		computed: {
 			...mapGetters([
-		      	'topicList'
-		    ])
+				'getTopicList'
+			])
 		},
 		created() {
 			this.$store.dispatch('fetchTopicList', {

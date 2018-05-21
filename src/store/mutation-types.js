@@ -1,0 +1,1 @@
+export const FETCH_TOPIC_LIST = 'FETCH_TOPIC_LIST'

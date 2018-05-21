@@ -1,0 +1,1 @@
+export const getTopicList = state => state.topicList
