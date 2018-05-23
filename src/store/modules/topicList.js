@@ -6,7 +6,7 @@ const state = {
 
 const mutations = {
 	[FETCH_TOPIC_LIST](state, payload) {
-		state.topicList = state.topicList.concat(payload.topicList)
+		state.topicList = payload.topicList
 	}
 }
 

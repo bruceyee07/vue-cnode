@@ -10,7 +10,12 @@
 </template>
 
 <script>
+import Vue from 'vue'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 import Header from '@/components/Header'
+
+Vue.use(ElementUI)
 
 export default {
 	name: 'App',
@@ -41,6 +46,12 @@ body {
 	visibility: hidden;
 	height: 0;
 	clear: both;
+}
+.el-pagination.is-background .el-pager li:not(.disabled).active {
+    background-color: #80bd01 !important;
+}
+.el-pagination.is-background .el-pager li:not(.disabled):hover {
+    color: #80bd01 !important;
 }
 .main-content {
 	width: 90%;
