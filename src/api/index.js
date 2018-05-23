@@ -13,3 +13,7 @@ export async function fetchTopicList (payload) {
 		}
 	})
 }
+
+export async function fetchTopicDetail (payload) {
+	return await axios.get(TOPIC_DETAIL_URL + `/${payload.id}`)
+}

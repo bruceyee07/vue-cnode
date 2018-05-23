@@ -9,6 +9,11 @@ export default new Router({
       path: '/',
       name: 'index',
       component: () => import('@/pages/index')
+    },
+    {
+    	path: '/topic/:topic_id',
+    	name: 'topic_detail',
+    	component: () => import('@/pages/topic')
     }
   ]
 })

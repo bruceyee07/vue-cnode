@@ -10,3 +10,13 @@ export async function fetchTopicList ({ commit }, payload) {
 		})
 	}
 }
+
+export async function fetchTopicDetail ({ commit }, payload) {
+	let result = await api.fetchTopicDetail(payload)
+	
+	if (result.status >= 200 && result.status < 300) {
+		commit(types.FETCH_TOPIC_DETAIL, {
+			topicDetail: result.data.data
+		})
+	}
+}

@@ -1,7 +1,7 @@
 <template>
 	<div class="topic-list-container">
 		<div class="cell" v-for="item in getTopicList.topicList">
-			<h4>{{ item.title }}</h4>
+			<router-link :to="'/topic/' + item.id" class="item-title">{{ item.title }}</router-link>
 		</div>
 	</div>
 </template>
@@ -36,5 +36,12 @@
 	}
 	.cell:nth-child(1) {
 		border-top: none;
+	}
+	.item-title {
+		text-decoration: none;
+		color: #333;
+	}
+	.item-title:visited {
+		color: #888;
 	}
 </style>

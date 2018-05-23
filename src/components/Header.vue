@@ -18,7 +18,7 @@
 	import { mapGetters } from 'vuex'
 
 	export default {
-		name: 'header',
+		name: 'top-header',
 		data() {
 			return {
 				
