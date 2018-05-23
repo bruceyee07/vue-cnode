@@ -20,3 +20,9 @@ export async function fetchTopicDetail ({ commit }, payload) {
 		})
 	}
 }
+
+export function clickTab ({ commit }, payload) {
+	commit(types.CLICK_TAB, {
+		tab: payload.tab
+	})
+}

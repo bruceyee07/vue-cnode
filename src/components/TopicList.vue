@@ -29,14 +29,14 @@
 		},
 		data() {
 			return {
-				tab: 'all',
 				current: 1,
 				totalCount: 999
 			}
 		},
 		computed: {
 			...mapGetters([
-				'getTopicList'
+				'getTopicList',
+				'getNavBar'
 			])
 		},
 		created() {
@@ -45,7 +45,7 @@
 		methods: {
 			async fetchTopicList() {
 				this.$store.dispatch('fetchTopicList', {
-					tab: this.tab,
+					tab: this.$store.state.navBar.tab,
 					page: this.current
 				})
 			},

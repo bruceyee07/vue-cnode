@@ -5,6 +5,7 @@ import * as actions from '@/store/actions'
 
 import topicList from '@/store/modules/topicList'
 import topicDetail from '@/store/modules/topicDetail'
+import navBar from '@/store/modules/navBar'
 
 Vue.use(Vuex)
 
@@ -15,7 +16,8 @@ export default new Vuex.Store({
 	getters,
 	modules: {
 		topicList,
-		topicDetail
+		topicDetail,
+		navBar
 	},
 	strict: debug
 })

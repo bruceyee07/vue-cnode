@@ -1,6 +1,14 @@
 <template>
 	<div class="tab-list">
-		<router-link v-for="item in tabs" :key="item.value" :to="{ name: 'index', params: { tab: item.value }}" v-bind:class="['tab-item', item.value == activeTab ? 'active' : '']">{{ item.name }}</router-link>
+		<span 
+			v-for="item in tabs" 
+			:key="item.value" 
+			:data-value="item.value"
+			@click="handleClickTab"
+			v-bind:class="['tab-item', item.value == getNavBar.tab ? 'active' : '']"
+		>
+			{{ item.name }}
+		</span>
 	</div>
 </template>
 
@@ -32,8 +40,24 @@
 						name: '招聘',
 						value: 'job'
 					}
-				],
-				activeTab: 'all'
+				]
+			}
+		},
+		computed: {
+			...mapGetters([
+				'getNavBar'
+			])
+		},
+		methods: {
+			handleClickTab($event) {
+				this.$store.dispatch('fetchTopicList', {
+					tab: $event.target.dataset.value,
+					page: 1
+				})
+
+				this.$store.dispatch('clickTab', {
+					tab: $event.target.dataset.value
+				})
 			}
 		}
 	}
@@ -49,9 +73,9 @@
 	.tab-item {
 		margin: 0 10px;
 		color: #80bd01;
-		text-decoration: none;
 		font-size: 14px;
 		line-height: 1;
+		cursor: pointer;
 	}
 	.tab-item.active {
 		background-color: #80bd01;
